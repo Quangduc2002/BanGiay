@@ -1,0 +1,59 @@
+.service {
+  position: relative;
+  // margin-bottom: 200px;
+  &_container {
+    position: absolute;
+    // bottom: -26%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: #3f3fdb;
+    display: flex;
+    justify-content: space-around;
+    padding: 26px 80px;
+
+    &__wrapper {
+      padding: 0 20px;
+    }
+    &__info {
+      color: #fff;
+    }
+  }
+}
+
+.product {
+  // &_ul {
+  //   // justify-content: center;
+  // }
+  &_li {
+    margin: 0 8px;
+    list-style: none;
+    padding: 6px 12px;
+    font-size: 18px;
+
+    &:hover {
+      background-color: #3f3fdb;
+      color: #fff;
+      transition: all 0.3s linear;
+      border-radius: 4px;
+    }
+  }
+
+  h2 {
+    color: #3f3fdb;
+    // font-size: 40px;
+    letter-spacing: 0.2em;
+  }
+}
+
+// product
+.Product {
+  // width: 1170px;
+  margin: 60px auto;
+}
+
+.active {
+  background-color: #3f3fdb;
+  border-radius: 4px;
+  color: #fff;
+}

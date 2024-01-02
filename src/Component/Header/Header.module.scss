@@ -1,0 +1,128 @@
+.middle {
+  background: #120414;
+  &_container {
+    justify-content: space-between;
+    // width: 1170px;
+    // margin: auto;
+  }
+  &_logo {
+    img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  &_menu {
+    ul {
+      margin-bottom: 0;
+      z-index: 2;
+    }
+    li {
+      list-style: none;
+      padding: 0 16px;
+      cursor: pointer;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #fff;
+      &:hover {
+        color: #f62d3e;
+        transition: all 0.3s linear;
+      }
+    }
+
+    &__product {
+      position: relative;
+
+      &__item {
+        width: 220px;
+        background-color: #fff;
+        padding: 0;
+        left: 0;
+        position: absolute;
+        border-radius: 4px;
+        display: none;
+
+        li {
+          color: #120414;
+          padding: 6px 12px;
+          text-align: left;
+          border-bottom: 1px solid #ccc;
+
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    &__linkHover {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        left: 0;
+        bottom: -40%;
+      }
+      &:hover > &__item {
+        display: block;
+      }
+
+      &__item {
+        li {
+          &:hover {
+            color: #f62d3e;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  &_right {
+    ul {
+      margin-bottom: 0;
+    }
+    li {
+      list-style: none;
+      margin-right: 20px;
+    }
+    i {
+      color: #fff;
+    }
+  }
+}
+
+.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  transition: all 0.3s linear;
+}
+
+.menu {
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+    visibility 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.current {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.model {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  animation: model 0.5s linear;
+  z-index: 4;
+}

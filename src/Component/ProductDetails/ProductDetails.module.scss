@@ -1,0 +1,33 @@
+.container {
+  margin: 50px auto;
+  display: flex;
+}
+
+.backgroud {
+  position: relative;
+  &_img {
+    background-image: url("../../assets/Image/bg-breadcrumb.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(60%);
+    min-height: 400px;
+  }
+
+  &_title {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50px);
+
+    h2 {
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    span {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+}
