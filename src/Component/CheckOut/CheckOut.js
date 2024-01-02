@@ -202,7 +202,10 @@ function CheckOut(props) {
 
               <div>
                 <button className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-2 font-semibold">
-                  <i className="mdi mdi-lock-outline mr-1"></i> Thanh toán ngay
+                  <i className="mdi mdi-lock-outline mr-1"></i>{" "}
+                  {payment === "Chuyển khoản ngân hàng"
+                    ? "Thanh toán ngay"
+                    : "Mua ngay"}
                 </button>
               </div>
             </div>

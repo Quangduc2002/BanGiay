@@ -281,7 +281,7 @@ function ProductAll(props) {
                 })}
               </div>
             ) : (
-              <div className="py-3 rounded-md text-red-500 font-semibold bg-orange-200">
+              <div className="py-3 rounded-md text-red-500 font-semibold bg-orange-200 text-center">
                 Không có sản phẩm nào trong danh mục này
               </div>
             )}
