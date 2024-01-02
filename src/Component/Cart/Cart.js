@@ -45,7 +45,7 @@ function Cart(props) {
                       className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
                     >
                       <img
-                        src={`http://localhost:3000/image/${cartItem.images[0].avt}`}
+                        src={`https://raw.githubusercontent.com/Quangduc2002/BanGiay/main/src/assets/Image/${cartItem.images[0].avt}`}
                         alt=""
                         className="w-full rounded-lg sm:w-40"
                       />

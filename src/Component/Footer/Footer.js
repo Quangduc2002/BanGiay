@@ -18,7 +18,7 @@ function Footer() {
       <div className={clsx(styles.Footer_img)}></div>
       <div className={clsx(styles.Footer1)}>
         <div>
-          <ul>
+          <ul className="pl-0">
             <h2 className={clsx(styles.Footer1_section)}>Hệ thống cửa hàng</h2>
             <li>
               <i
@@ -49,7 +49,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <ul>
+          <ul className="pl-0">
             <h2 className={clsx(styles.Footer1_section)}>
               Chấp nhận thanh toán
             </h2>

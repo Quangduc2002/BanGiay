@@ -186,7 +186,7 @@ function ProductAll(props) {
               </select>
             </div>
 
-            <div className="lg:ml-3 lg:mr-0 xs:mr-3 relative">
+            <div className="xs:ml-3 lg:mr-0 xs:mr-3 relative">
               <div className="relative">
                 <input
                   value={searchQuery}

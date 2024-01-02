@@ -41,7 +41,7 @@ function CheckOut(props) {
                       <div className="w-full flex items-center">
                         <div className="overflow-hidden rounded-lg w-16 h-16 bg-gray-50 border border-gray-200">
                           <img
-                            src={`http://localhost:3000/image/${cartItem.images[0].avt}`}
+                            src={`https://raw.githubusercontent.com/Quangduc2002/BanGiay/main/src/assets/Image/${cartItem.images[0].avt}`}
                             alt=""
                           />
                         </div>

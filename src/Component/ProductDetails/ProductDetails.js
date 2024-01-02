@@ -143,7 +143,7 @@ function ProductDetails(props) {
               <img
                 className=" border rounded-md h-[432px]  sm:w-full xs:w-auto "
                 alt=""
-                src={`http://localhost:3000/image/${
+                src={`https://raw.githubusercontent.com/Quangduc2002/BanGiay/main/src/assets/Image/${
                   changeImages ? changeImages : productDetail.images[0].avt
                 }`}
               />
@@ -154,9 +154,11 @@ function ProductDetails(props) {
                   <div key={index} className="w-1/4 px-2 ">
                     <img
                       onClick={() => setChangeImages(image.avt)}
-                      className="h-[96px] w-[96px] border rounded-md hover:!border-orange-500"
+                      className={`h-[96px] w-[96px]  rounded-md hover:!border-orange-500 ${
+                        changeImages === image.avt ? "border-orange-500" : ""
+                      } border-1`}
                       alt=""
-                      src={`http://localhost:3000/image/${image.avt}`}
+                      src={`https://raw.githubusercontent.com/Quangduc2002/BanGiay/main/src/assets/Image/${image.avt}`}
                     />
                   </div>
                 ))}
@@ -176,10 +178,8 @@ function ProductDetails(props) {
             </p>
 
             <div className="flex gap-4 mb-4 items-center">
-              <div className={clsx(styles.right_star, "stars-outer m-0")}>
-                <div
-                  className={clsx(styles.right_starinner, "stars-inner")}
-                ></div>
+              <div className={clsx("stars-outer m-0")}>
+                <div className={clsx("stars-inner")}></div>
               </div>
               <p className="text-xs uppercase text-rhino-400 font-bold m-0">
                 5 lượt đánh giá

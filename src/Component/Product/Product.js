@@ -32,9 +32,9 @@ function Product(props) {
           ""
         )}
         <img
-          src={`http://localhost:3000/image/${product.images[0].avt}`}
+          src={`https://raw.githubusercontent.com/Quangduc2002/BanGiay/main/src/assets/Image/${product.images[0].avt}`}
           alt=""
-          className="bg-[#cbcbcb] xl:w-[270px] xl:h-[270px] lg:w-[218px] lg:h-[218px] md:w-[218px] md:h-[218px] sm:w-[156px] sm:h-[156px] xxs:w-[200px] xxs:h-[200px] xs:w-[150px] xs:h-[150px]  "
+          className="bg-[#cbcbcb] xl:w-[270px] xl:h-[270px] lg:w-[218px] lg:h-[218px] md:w-[218px] md:h-[218px] sm:w-[156px] sm:h-[156px] xxs:w-[200px] xxs:h-[200px]   "
         />
         <div
           className={clsx(
@@ -58,6 +58,15 @@ function Product(props) {
         <p className={clsx(styles.productWrapper_item__info__type)}>
           {product.type}
         </p>
+
+        <div className="flex gap-4 items-center">
+          <div className={clsx("stars-outer m-0")}>
+            <div className={clsx("stars-inner")}></div>
+          </div>
+          <p className="text-xs uppercase text-rhino-400 font-medium m-0">
+            5 lượt đánh giá
+          </p>
+        </div>
 
         <p className={clsx(styles.productWrapper_item__info__price)}>
           {VND.format(product.price - (product.price * product.discount) / 100)}

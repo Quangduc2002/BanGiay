@@ -16,7 +16,7 @@ import CheckOut from "./Component/CheckOut/CheckOut";
 
 function Layout() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [productPerPage, setProductPerPage] = useState(8);
+  const [productPerPage, setProductPerPage] = useState(12);
   const [cartItems, setCartItems] = useState([]);
   const [isActive, setIsActive] = useState(1);
   const [filterType, setFilterType] = useState("ALL");
@@ -554,6 +554,214 @@ function Layout() {
         },
       ],
       price: "1500000",
+      discount: 10,
+    },
+
+    {
+      id: 11,
+      name: "impact-4-basketball-shoes-X",
+      images: [
+        {
+          id: 1,
+          avt: "impact-4-basketball-shoes-X.png",
+        },
+        {
+          id: 2,
+          avt: "impact-4-basketball-shoes-X-1.png",
+        },
+        {
+          id: 3,
+          avt: "impact-4-basketball-shoes-X-2.png",
+        },
+        {
+          id: 4,
+          avt: "impact-4-basketball-shoes-X-3.png",
+        },
+        {
+          id: 5,
+          avt: "impact-4-basketball-shoes-X-4.png",
+        },
+      ],
+      type: "Nike",
+      size: [
+        {
+          id: 1,
+          name: 37,
+        },
+        {
+          id: 2,
+          name: 39,
+        },
+        {
+          id: 3,
+          name: 40,
+        },
+        {
+          id: 4,
+          name: 41,
+        },
+        {
+          id: 5,
+          name: 42,
+        },
+      ],
+      price: "1000000",
+      discount: 10,
+    },
+
+    {
+      id: 12,
+      name: "air-jordan-1-mid-se-shoes-X",
+      images: [
+        {
+          id: 1,
+          avt: "air-jordan-1-mid-se-shoes-X.png",
+        },
+        {
+          id: 2,
+          avt: "air-jordan-1-mid-se-shoes-X-1.png",
+        },
+        {
+          id: 3,
+          avt: "air-jordan-1-mid-se-shoes-X-2.png",
+        },
+        {
+          id: 4,
+          avt: "air-jordan-1-mid-se-shoes-X-3.png",
+        },
+        {
+          id: 5,
+          avt: "air-jordan-1-mid-se-shoes-X-4.png",
+        },
+      ],
+      type: "Jordan",
+      size: [
+        {
+          id: 1,
+          name: 38,
+        },
+        {
+          id: 2,
+          name: 39,
+        },
+        {
+          id: 3,
+          name: 40,
+        },
+        {
+          id: 4,
+          name: 41,
+        },
+        {
+          id: 5,
+          name: 43,
+        },
+      ],
+      price: "1200000",
+      discount: 10,
+    },
+
+    {
+      id: 13,
+      name: "tech-hera-shoes-X",
+      images: [
+        {
+          id: 1,
+          avt: "tech-hera-shoes-X.png",
+        },
+        {
+          id: 2,
+          avt: "tech-hera-shoes-X-1.png",
+        },
+        {
+          id: 3,
+          avt: "tech-hera-shoes-X-2.png",
+        },
+        {
+          id: 4,
+          avt: "tech-hera-shoes-X-3.png",
+        },
+        {
+          id: 5,
+          avt: "tech-hera-shoes-X-4.png",
+        },
+      ],
+      type: "Nike",
+      size: [
+        {
+          id: 1,
+          name: 38,
+        },
+        {
+          id: 2,
+          name: 39,
+        },
+        {
+          id: 3,
+          name: 40,
+        },
+        {
+          id: 4,
+          name: 41,
+        },
+        {
+          id: 5,
+          name: 42,
+        },
+      ],
+      price: "1500000",
+      discount: 10,
+    },
+
+    {
+      id: 14,
+      name: "pegasus-40-road",
+      images: [
+        {
+          id: 1,
+          avt: "pegasus-40-road-running-shoes-0Z9lqN.png",
+        },
+        {
+          id: 2,
+          avt: "pegasus-40-road-running-shoes-0Z9lqN-1.png",
+        },
+        {
+          id: 3,
+          avt: "pegasus-40-road-running-shoes-0Z9lqN-2.png",
+        },
+        {
+          id: 4,
+          avt: "pegasus-40-road-running-shoes-0Z9lqN-3.png",
+        },
+        {
+          id: 5,
+          avt: "pegasus-40-road-running-shoes-0Z9lqN-4.png",
+        },
+      ],
+      type: "Nike",
+      size: [
+        {
+          id: 1,
+          name: 38,
+        },
+        {
+          id: 2,
+          name: 39,
+        },
+        {
+          id: 3,
+          name: 40,
+        },
+        {
+          id: 4,
+          name: 41,
+        },
+        {
+          id: 5,
+          name: 42,
+        },
+      ],
+      price: "1250000",
       discount: 10,
     },
   ];
