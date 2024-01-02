@@ -16,14 +16,14 @@ function ProductDetails(props) {
     (product) => product.type === productDetail.type
   );
 
+  const [changeImages, setChangeImages] = useState(
+    productDetail ? productDetail.images[0].avt : ""
+  );
+
   const VND = new Intl.NumberFormat("vi-VN", {
     style: "currency",
     currency: "VND",
   });
-
-  const [changeImages, setChangeImages] = useState(
-    productDetail ? productDetail.images[0].avt : ""
-  );
 
   const handleCountUp = () => {
     setCount(count + 1);
