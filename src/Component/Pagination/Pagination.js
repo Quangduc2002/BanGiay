@@ -32,7 +32,8 @@ function Pagination(props) {
     <ul
       className={clsx(
         styles.pagination,
-        pageNumbers.length === 1 ? styles.pagination_active : ""
+        pageNumbers.length === 1 ? styles.pagination_active : "",
+        "pl-0"
       )}
     >
       <button

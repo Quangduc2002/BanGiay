@@ -12,6 +12,8 @@ import phone from "../../assets/Image/phone.svg";
 import present from "../../assets/Image/present.svg";
 import change from "../../assets/Image/change.svg";
 import Pagination from "../Pagination/Pagination";
+import SliderProduct from "../SliderProduct/SliderProduct";
+import Accessory from "../Accessory/Accessory";
 
 function Home(props) {
   const {
@@ -213,125 +215,150 @@ function Home(props) {
         </div>
       </div>
 
-      <div
-        className={clsx(
-          styles.product,
-          "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
-        )}
-      >
-        <h2 className="lg:text-4xl md:text-3xl xxs:text-2xl xs:text-xl text-center">
-          GIÀY THỂ THAO
-        </h2>
-        <p
-          className="lg:text-2xl xxs:text-xl xs:text-base text-center"
-          style={{ color: "#616161" }}
-        >
-          Các sản phẩm có tại cửa hàng
-        </p>
-
-        <ul
+      <div className="xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] border-b-2 mx-auto overflow-hidden">
+        <div
           className={clsx(
-            styles.product_ul,
-            "d-flex mx-8 pb-2.5 pl-0 md:justify-center sm:overflow-auto xs:overflow-hidden xs:overflow-scroll "
+            styles.product,
+            "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
           )}
-          style={{ marginTop: 10 }}
         >
-          {types.map((type) => {
-            return (
-              <li
-                key={type.id}
+          <h2 className="lg:text-4xl py-2 hover:text-orange-500 cursor-pointer uppercase md:text-3xl xxs:text-2xl xs:text-xl text-center">
+            Sản phẩm bán chạy
+          </h2>
+          <p
+            className="lg:text-2xl xxs:text-xl xs:text-base text-center"
+            style={{ color: "#616161" }}
+          >
+            Các sản phẩm có tại cửa hàng
+          </p>
+        </div>
+
+        <SliderProduct dataToInsert={dataToInsert} />
+      </div>
+
+      <div className="mt-10">
+        <div
+          className={clsx(
+            styles.product,
+            "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
+          )}
+        >
+          <h2 className="lg:text-4xl hover:text-orange-500 cursor-pointer uppercase md:text-3xl xxs:text-2xl xs:text-xl text-center">
+            giày thể thao
+          </h2>
+          <p
+            className="lg:text-2xl xxs:text-xl xs:text-base text-center"
+            style={{ color: "#616161" }}
+          >
+            Các sản phẩm có tại cửa hàng
+          </p>
+
+          <ul
+            className={clsx(
+              styles.product_ul,
+              "d-flex mx-8 pb-2.5 pl-0 md:justify-center sm:overflow-auto xs:overflow-hidden xs:overflow-scroll "
+            )}
+            style={{ marginTop: 10 }}
+          >
+            {types.map((type) => {
+              return (
+                <li
+                  key={type.id}
+                  className={clsx(
+                    styles.product_li,
+                    filterType === type.name ? styles.active : ""
+                  )}
+                >
+                  <label
+                    className=" md:text-xl xs:text-lg"
+                    style={{ cursor: "pointer" }}
+                    htmlFor={`type-${type.id}`}
+                  >
+                    <input
+                      style={{ display: "none" }}
+                      id={`type-${type.id}`}
+                      type="radio"
+                      name="type"
+                      value={type.name}
+                      onChange={(e) => setFilterType(e.target.value)}
+                    />
+                    {type.name}
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div
+          className={clsx(
+            styles.Product,
+            "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto  "
+          )}
+        >
+          <motion.div
+            initial={{ y: "4rem", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              type: spring,
+            }}
+          >
+            {homeProducts.length > 0 ? (
+              <div
                 className={clsx(
-                  styles.product_li,
-                  filterType === type.name ? styles.active : ""
+                  styles.productWrapper,
+                  "grid lg:grid-cols-4 sm:grid-cols-3 xxs:grid-cols-2 xs:grid-cols-1"
                 )}
               >
-                <label
-                  className=" md:text-xl xs:text-lg"
-                  style={{ cursor: "pointer" }}
-                  htmlFor={`type-${type.id}`}
-                >
-                  <input
-                    style={{ display: "none" }}
-                    id={`type-${type.id}`}
-                    type="radio"
-                    name="type"
-                    value={type.name}
-                    onChange={(e) => setFilterType(e.target.value)}
-                  />
-                  {type.name}
-                </label>
-              </li>
-            );
-          })}
-        </ul>
+                {homeProducts.map((product) => {
+                  return (
+                    <Product
+                      key={product.id}
+                      product={product}
+                      indexOfLastProduct={indexOfLastProduct}
+                      indeOfFirstProduct={indeOfFirstProduct}
+                      filterType={filterType}
+                      productPerPage={productPerPage}
+                      pagination={pagination}
+                      isActive={isActive}
+                      handleNext={handleNext}
+                      handlePrevious={handlePrevious}
+                      setProducts={setProducts}
+                      minPrice={minPrice}
+                      maxPrice={maxPrice}
+                      checkType={checkType}
+                      checkSize={checkSize}
+                      sortPrice={sortPrice}
+                      dataToInsert={dataToInsert}
+                    />
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="py-3 rounded-md text-red-500 font-semibold bg-orange-200 text-center">
+                Không có sản phẩm nào trong danh mục này
+              </div>
+            )}
+
+            {homeProducts.length > 0 ? (
+              <Pagination
+                productPerPage={productPerPage}
+                totalProduct={filteredProduct.length}
+                pagination={pagination}
+                isActive={isActive}
+                handleNext={handleNext}
+                handlePrevious={handlePrevious}
+              />
+            ) : (
+              ""
+            )}
+          </motion.div>
+        </div>
       </div>
 
+      <Accessory />
       <IconTop />
-      <div
-        className={clsx(
-          styles.Product,
-          "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto  "
-        )}
-      >
-        <motion.div
-          initial={{ y: "4rem", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 1,
-            type: spring,
-          }}
-        >
-          {homeProducts.length > 0 ? (
-            <div
-              className={clsx(
-                styles.productWrapper,
-                "grid lg:grid-cols-4 sm:grid-cols-3 xxs:grid-cols-2 xs:grid-cols-1"
-              )}
-            >
-              {homeProducts.map((product) => {
-                return (
-                  <Product
-                    key={product.id}
-                    product={product}
-                    indexOfLastProduct={indexOfLastProduct}
-                    indeOfFirstProduct={indeOfFirstProduct}
-                    filterType={filterType}
-                    productPerPage={productPerPage}
-                    pagination={pagination}
-                    isActive={isActive}
-                    handleNext={handleNext}
-                    handlePrevious={handlePrevious}
-                    setProducts={setProducts}
-                    minPrice={minPrice}
-                    maxPrice={maxPrice}
-                    checkType={checkType}
-                    checkSize={checkSize}
-                    sortPrice={sortPrice}
-                    dataToInsert={dataToInsert}
-                  />
-                );
-              })}
-            </div>
-          ) : (
-            <div className="py-3 rounded-md text-red-500 font-semibold bg-orange-200 text-center">
-              Không có sản phẩm nào trong danh mục này
-            </div>
-          )}
-
-          {homeProducts.length > 0 ? (
-            <Pagination
-              productPerPage={productPerPage}
-              totalProduct={filteredProduct.length}
-              pagination={pagination}
-              isActive={isActive}
-              handleNext={handleNext}
-              handlePrevious={handlePrevious}
-            />
-          ) : (
-            ""
-          )}
-        </motion.div>
-      </div>
     </div>
   );
 }

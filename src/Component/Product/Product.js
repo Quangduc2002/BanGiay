@@ -59,10 +59,11 @@ function Product(props) {
           {product.type}
         </p>
 
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-wrap my-2 text-[#adadad] items-center">
           <div className={clsx("stars-outer m-0")}>
             <div className={clsx("stars-inner")}></div>
           </div>
+          &nbsp;&nbsp;
           <p className="text-xs uppercase text-rhino-400 font-medium m-0">
             5 lượt đánh giá
           </p>

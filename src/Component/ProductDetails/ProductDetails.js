@@ -1,9 +1,9 @@
-import clsx from "clsx";
 import React, { useState } from "react";
+import clsx from "clsx";
 import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import styles from "./ProductDetails.module.scss";
-import Product from "../Product/Product";
+import SliderProduct from "../SliderProduct/SliderProduct";
 
 function ProductDetails(props) {
   const { dataToInsert, count, setCount, onAdd, sizes, setSizes, formErrors } =
@@ -74,47 +74,6 @@ function ProductDetails(props) {
     ],
   };
 
-  const similarProduct = {
-    // dots: true,
-    speed: 1000,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 3000,
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          arrows: false,
-        },
-      },
-    ],
-  };
-
   return (
     <div>
       <div className={clsx(styles.backgroud)}>
@@ -131,7 +90,7 @@ function ProductDetails(props) {
         </div>
       </div>
 
-      <div className="container flex-wrap px-4 mx-auto md:flex my-10">
+      <div className="container flex-wrap px-4 mx-auto md:flex my-10 border-b-2 pb-10">
         <div
           className={clsx(
             styles.left,
@@ -255,12 +214,31 @@ function ProductDetails(props) {
         </div>
       </div>
 
-      <div className="xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto overflow-hidden">
-        <Slider {...similarProduct}>
-          {similarProducts.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
-        </Slider>
+      <div className="xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto overflow-hidden mb-10">
+        <div
+          className={clsx(
+            "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
+          )}
+        >
+          <h2
+            className={clsx(
+              styles.title,
+              "lg:text-4xl relative py-2 text-[#3f3fdb]  cursor-pointer uppercase md:text-3xl xxs:text-2xl xs:text-xl text-center"
+            )}
+          >
+            <span className={clsx(styles.title_Accessory, "relative")}>
+              sản phẩm tương tự
+            </span>
+          </h2>
+          <p
+            className="lg:text-2xl xxs:text-xl xs:text-base text-center"
+            style={{ color: "#616161" }}
+          >
+            Các sản phẩm tương tự
+          </p>
+        </div>
+
+        <SliderProduct similarProducts={similarProducts} />
       </div>
     </div>
   );
