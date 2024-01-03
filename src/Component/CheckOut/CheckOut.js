@@ -105,7 +105,10 @@ function CheckOut(props) {
                     </span>
                   </div>
                   <div className="flex-grow pl-3">
-                    <span>Phạm Quang Đức</span>
+                    <input
+                      className="border border-slate-400 px-2 focus:border-gray-300 outline-none focus:ring rounded-lg py-2"
+                      value="Phạm Quang Đức"
+                    />
                   </div>
                 </div>
 
@@ -116,7 +119,10 @@ function CheckOut(props) {
                     </span>
                   </div>
                   <div className="flex-grow pl-3">
-                    <span>0965420922</span>
+                    <input
+                      className="border border-slate-400 px-2 focus:border-gray-300 outline-none focus:ring rounded-lg py-2"
+                      value="0965420922"
+                    />
                   </div>
                 </div>
 
@@ -127,7 +133,10 @@ function CheckOut(props) {
                     </span>
                   </div>
                   <div className="flex-grow pl-3">
-                    <span>Phú Xuyên-Hà Nội</span>
+                    <input
+                      className="border border-slate-400 px-2 focus:border-gray-300 outline-none focus:ring rounded-lg py-2"
+                      value="Phú Xuyên-Hà Nội"
+                    />
                   </div>
                 </div>
 
