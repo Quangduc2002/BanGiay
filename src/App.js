@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import { Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -14,6 +16,11 @@ import Layout from "./Layout";
 import Login from "./Component/Login/Login";
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      duration: 3000,
+    });
+  }, []);
   return (
     <div className="App">
       <Routes>

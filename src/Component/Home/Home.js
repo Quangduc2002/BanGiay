@@ -215,12 +215,16 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] border-b-2 mx-auto overflow-hidden">
+      <div
+        className="xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] border-b-2 mx-auto overflow-hidden"
+        data-aos="fade-up"
+      >
         <div
           className={clsx(
             styles.product,
             "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
           )}
+          data-aos="fade-up"
         >
           <h2 className="lg:text-4xl py-2 hover:text-orange-500 cursor-pointer uppercase md:text-3xl xxs:text-2xl xs:text-xl text-center">
             Sản phẩm bán chạy
@@ -236,12 +240,13 @@ function Home(props) {
         <SliderProduct dataToInsert={dataToInsert} />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10" data-aos="fade-up">
         <div
           className={clsx(
             styles.product,
             "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
           )}
+          data-aos="fade-up"
         >
           <h2 className="lg:text-4xl hover:text-orange-500 cursor-pointer uppercase md:text-3xl xxs:text-2xl xs:text-xl text-center">
             giày thể thao

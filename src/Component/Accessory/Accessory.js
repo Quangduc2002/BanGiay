@@ -13,6 +13,7 @@ function Accessory(props) {
           className={clsx(
             "xl:w-[1170px] lg:w-[960px] md:w-[720px] sm:w-[540px] xxs:w-[460px] xs:w-[300px] mx-auto"
           )}
+          data-aos="fade-up"
         >
           <h2
             className={clsx(
@@ -33,7 +34,10 @@ function Accessory(props) {
         </div>
 
         <div className="md:flex gap-6 ">
-          <div className={clsx(styles.image, " relative  md:mb-0 xs:mb-6")}>
+          <div
+            className={clsx(styles.image, " relative  md:mb-0 xs:mb-6")}
+            data-aos="fade-right"
+          >
             <img className={clsx("h-full")} src={image1} alt="" />
             <div className="absolute bottom-8 left-8 text-white z-2">
               <h3 className="hover:text-orange-500 cursor-pointer">
@@ -46,7 +50,7 @@ function Accessory(props) {
             </div>
           </div>
 
-          <div>
+          <div data-aos="fade-left">
             <div className={clsx(styles.image, "relative mb-6")}>
               <img src={image2} alt="" />
               <div className="absolute bottom-8 left-8 text-white z-2">
